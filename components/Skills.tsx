@@ -10,7 +10,8 @@ import {
     Sparkles,
     Database,
     Shield,
-    Wrench
+    Wrench,
+    Star
 } from 'lucide-react';
 
 interface SkillCategory {
@@ -65,6 +66,12 @@ export default function Skills() {
             color: "text-[#F97316]" // Orange
         },
         {
+            name: "Data & Messaging",
+            icon: <Database className="icon" />,
+            skills: ["BigQuery", "Dataflow", "Pub/Sub", "Cloud SQL", "Spanner"],
+            color: "text-[#FBBC04]" // Google Yellow
+        },
+        {
             name: "Observability",
             icon: <Wrench className="icon" />,
             skills: ["Cloud Monitoring", "Cloud Logging", "Prometheus", "Grafana"],
@@ -73,8 +80,11 @@ export default function Skills() {
     ];
 
     return (
-        <section id="skills" className="flex flex-col gap-6">
-            <h2 className="text-[rgb(var(--foreground))]">Skills</h2>
+        <section id="skills" className="bento-card rounded-[3rem]! flex flex-col gap-6">
+            <h2 className="text-[rgb(var(--foreground))] flex items-center gap-2 mb-2">
+                <Star className="w-5 h-5 text-emerald-500 fill-emerald-500" />
+                Skills & Tech Stack
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {skillCategories.map((category, index) => (
                     <div key={index} className="bento-card hover:bg-[rgb(var(--secondary))] transition-colors group">

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, BookOpen } from 'lucide-react';
+import { ArrowUpRight, BookOpen, Star } from 'lucide-react';
 
 interface BlogPost {
     title: string;
@@ -38,9 +38,12 @@ export default function Blogs() {
     ];
 
     return (
-        <section id="blogs" className="bento-card">
+        <section id="blogs" className="bento-card rounded-[3rem]!">
             <div className="flex items-center justify-between mb-6">
-                <h2 className="text-[rgb(var(--foreground))] mb-0">Writing & Insights</h2>
+                <h2 className="text-[rgb(var(--foreground))] mb-0 flex items-center gap-2">
+                    <Star className="w-5 h-5 text-pink-500 fill-pink-500" />
+                    Writing & Insights
+                </h2>
                 <a
                     href="https://medium.com/@Sarthak_Kesarwani"
                     target="_blank"

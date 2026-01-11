@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { FileText } from 'lucide-react';
 
 export default function Navigation() {
     const [activeSection, setActiveSection] = useState('home');
@@ -52,7 +53,7 @@ export default function Navigation() {
             className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? 'glass shadow-lg py-4' : 'bg-transparent py-6'
                 }`}
         >
-            <div className="container flex items-center justify-between">
+            <div className="container-custom flex items-center justify-between">
                 <button
                     onClick={() => scrollToSection('home')}
                     className="text-2xl font-bold gradient-text"
@@ -67,31 +68,53 @@ export default function Navigation() {
                             key={item.id}
                             onClick={() => scrollToSection(item.id)}
                             className={`font-medium transition-colors duration-300 hover:text-purple-600 dark:hover:text-purple-400 ${activeSection === item.id
-                                    ? 'text-purple-600 dark:text-purple-400'
-                                    : 'text-gray-700 dark:text-gray-300'
+                                ? 'text-purple-600 dark:text-purple-400'
+                                : 'text-gray-700 dark:text-gray-300'
                                 }`}
                         >
                             {item.label}
                         </button>
                     ))}
+
+                    <a
+                        href="https://docs.google.com/document/d/1dQQsm2Nczd-9VC_HMjvvgA76SBZsFz8z85fk9qMgxWc/edit?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-resume group/resume"
+                    >
+                        <FileText className="icon-sm" />
+                        <span>Resume</span>
+                    </a>
                 </div>
 
-                {/* Mobile Menu Button */}
-                <button
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    className="md:hidden p-2 rounded-lg glass"
-                    aria-label="Toggle menu"
-                >
-                    {isMobileMenuOpen ? (
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    ) : (
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    )}
-                </button>
+                {/* Mobile Actions */}
+                <div className="flex items-center gap-3 md:hidden">
+                    <a
+                        href="https://docs.google.com/document/d/1dQQsm2Nczd-9VC_HMjvvgA76SBZsFz8z85fk9qMgxWc/edit?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-resume group/resume"
+                    >
+                        <FileText className="icon-sm" />
+                        <span>Resume</span>
+                    </a>
+
+                    <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        className="p-2 rounded-lg glass"
+                        aria-label="Toggle menu"
+                    >
+                        {isMobileMenuOpen ? (
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        ) : (
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        )}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu */}
@@ -103,8 +126,8 @@ export default function Navigation() {
                                 key={item.id}
                                 onClick={() => scrollToSection(item.id)}
                                 className={`text-left font-medium transition-colors duration-300 hover:text-purple-600 dark:hover:text-purple-400 ${activeSection === item.id
-                                        ? 'text-purple-600 dark:text-purple-400'
-                                        : 'text-gray-700 dark:text-gray-300'
+                                    ? 'text-purple-600 dark:text-purple-400'
+                                    : 'text-gray-700 dark:text-gray-300'
                                     }`}
                             >
                                 {item.label}

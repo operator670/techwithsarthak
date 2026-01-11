@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import {
     Github,
     Linkedin,
@@ -9,11 +10,24 @@ import {
     Cloud,
     Terminal,
     FileText,
-    Award
+    Award,
+    Sparkles
 } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 export default function Sidebar() {
+    const [showBadge, setShowBadge] = useState(false);
+
+    useEffect(() => {
+        // Pop up the badge after 1.5s and keep for 3s
+        const showTimer = setTimeout(() => setShowBadge(true), 1500);
+        const hideTimer = setTimeout(() => setShowBadge(false), 3500);
+        return () => {
+            clearTimeout(showTimer);
+            clearTimeout(hideTimer);
+        };
+    }, []);
+
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
@@ -26,12 +40,24 @@ export default function Sidebar() {
 
             {/* Profile Card */}
             <div className="bento-card flex flex-col items-center text-center p-8">
-                <div className="w-32 h-32 rounded-full mb-6 relative group overflow-hidden border-2 border-[rgb(var(--border))]">
-                    <img
-                        src="/images/Sarthak.jpeg"
-                        alt="Sarthak Kesarwani"
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
+                <div className="relative mb-6 group cursor-pointer">
+                    <div className="profile-border-premium w-36 h-36 flex items-center justify-center translate-x-1">
+                        <div className="profile-image-inner w-32 h-32">
+                            <img
+                                src="/images/Sarthak.jpeg"
+                                alt="Sarthak Kesarwani"
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            />
+                        </div>
+                    </div>
+                    {/* Hire Me Badge */}
+                    <div className={`badge-hire-me -rotate-12 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] pointer-events-none
+                        ${showBadge || 'group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 group-hover:rotate-[-5deg] group-hover:pointer-events-auto'}
+                        ${showBadge ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-50 translate-y-4'}
+                    `}>
+                        <Sparkles className="w-3.5 h-3.5 fill-white" />
+                        HIRE ME!
+                    </div>
                 </div>
 
                 <h1 className="text-2xl font-bold text-[rgb(var(--foreground))] mb-2">
@@ -41,12 +67,24 @@ export default function Sidebar() {
                     Senior Cloud Engineer
                 </p>
 
-                <div className="flex items-center gap-2 text-sm text-[rgb(var(--muted-foreground))] bg-[rgb(var(--secondary))] px-3 py-1.5 rounded-full mb-6">
+                <div className="flex items-center gap-2 text-sm text-[rgb(var(--muted-foreground))] bg-[rgb(var(--secondary))] px-3 py-1.5 rounded-full">
                     <MapPin className="icon-sm" />
                     <span>New Delhi, India</span>
                 </div>
 
-                <div className="flex gap-3" style={{ marginTop: '2rem' }}>
+                <div style={{ marginTop: '1.25rem' }}>
+                    <a
+                        href="https://docs.google.com/document/d/1dQQsm2Nczd-9VC_HMjvvgA76SBZsFz8z85fk9qMgxWc/edit?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-resume group/resume"
+                    >
+                        <FileText className="icon-sm" />
+                        <span>View Resume</span>
+                    </a>
+                </div>
+
+                <div className="flex gap-3" style={{ marginTop: '1.25rem' }}>
                     <ThemeToggle />
                     <a
                         href="mailto:official.sarthak905@gmail.com"
@@ -177,6 +215,9 @@ export default function Sidebar() {
                     <span className="px-3 py-1 rounded-full bg-[rgb(var(--secondary))] text-xs font-medium border border-[rgb(var(--border))]">Python</span>
                     <span className="px-3 py-1 rounded-full bg-[rgb(var(--secondary))] text-xs font-medium border border-[rgb(var(--border))]">C/C++</span>
                     <span className="px-3 py-1 rounded-full bg-[rgb(var(--secondary))] text-xs font-medium border border-[rgb(var(--border))]">Generative AI</span>
+                    <span className="px-3 py-1 rounded-full bg-[rgb(var(--secondary))] text-xs font-medium border border-[rgb(var(--border))]">BigQuery</span>
+                    <span className="px-3 py-1 rounded-full bg-[rgb(var(--secondary))] text-xs font-medium border border-[rgb(var(--border))]">Dataflow</span>
+                    <span className="px-3 py-1 rounded-full bg-[rgb(var(--secondary))] text-xs font-medium border border-[rgb(var(--border))]">Pub/Sub</span>
                     <span className="px-3 py-1 rounded-full bg-[rgb(var(--secondary))] text-xs font-medium border border-[rgb(var(--border))]">Linux</span>
                     <span className="px-3 py-1 rounded-full bg-[rgb(var(--secondary))] text-xs font-medium border border-[rgb(var(--border))]">Agentic AI</span>
                 </div>
