@@ -27,8 +27,11 @@ export default function Achievements() {
     ];
 
     return (
-        <section id="achievements" className="bento-card">
-            <h2 className="text-[rgb(var(--foreground))]">Key Achievements</h2>
+        <section id="achievements" className="bento-card rounded-[3rem]!">
+            <h2 className="text-[rgb(var(--foreground))] flex items-center gap-2 mb-8">
+                <Star className="w-5 h-5 text-orange-500 fill-orange-500" />
+                Key Achievements
+            </h2>
             <div className="space-y-4">
                 {achievements.map((item, index) => (
                     <div key={index} className="flex items-center justify-between p-3 hover:bg-[rgb(var(--secondary))] rounded-xl transition-colors">

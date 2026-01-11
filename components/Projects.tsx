@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, ExternalLink, Code2, Cloud, Brain, Terminal } from 'lucide-react';
+import { Github, ExternalLink, Code2, Cloud, Brain, Terminal, Star } from 'lucide-react';
 
 interface Project {
     title: string;
@@ -23,60 +23,65 @@ export default function Projects() {
     ];
 
     return (
-        <section id="projects" className="bento-card">
-            <h2 className="text-[rgb(var(--foreground))]">Featured Projects</h2>
+        <section id="projects" className="bento-card rounded-[3rem]!">
+            <div className="mb-8">
+                <h2 className="text-[rgb(var(--foreground))] mb-0 flex items-center gap-2">
+                    <Star className="w-5 h-5 text-indigo-500 fill-indigo-500" />
+                    Featured Projects
+                </h2>
+            </div>
+
             <div className="flex flex-col gap-6">
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="group flex flex-col rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--secondary))] hover:bg-[rgb(var(--card))] hover:shadow-2xl hover:shadow-[rgb(var(--foreground),0.05)] transition-all duration-300 overflow-hidden"
-                        style={{ padding: '0.4rem 2.5rem' }}
+                        className="group relative flex flex-col p-8 rounded-[2.5rem] border border-[rgb(var(--border))] bg-gradient-to-br from-[rgb(var(--secondary))] to-white/5 dark:from-zinc-900/50 dark:to-zinc-900/10 hover:shadow-2xl hover:shadow-black/5 transition-all duration-300"
                     >
-                        <div className="flex items-start justify-between mb-4 px-4">
-                            <div className="p-3 rounded-xl bg-[rgb(var(--background))] border border-[rgb(var(--border))] group-hover:scale-110 transition-transform shadow-sm">
-                                {project.icon}
+                        <div className="flex gap-6">
+                            {/* Left Column: Technology Icon */}
+                            <div className="shrink-0 pt-1">
+                                <div className="p-3.5 rounded-2xl bg-white dark:bg-zinc-900/50 border border-[rgb(var(--border))] group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm backdrop-blur-sm">
+                                    <div className="w-6 h-6 flex items-center justify-center">
+                                        {project.icon}
+                                    </div>
+                                </div>
                             </div>
-                            <div className="flex gap-2 pr-4">
-                                {project.github && (
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-2 text-[rgb(var(--muted-foreground))] hover:text-[rgb(var(--foreground))] hover:bg-[rgb(var(--secondary))] rounded-lg transition-colors"
-                                    >
-                                        <Github className="w-4 h-4" />
-                                    </a>
-                                )}
-                                {project.link && (
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-2 text-[rgb(var(--muted-foreground))] hover:text-[rgb(var(--foreground))] hover:bg-[rgb(var(--secondary))] rounded-lg transition-colors"
-                                    >
-                                        <ExternalLink className="w-4 h-4" />
-                                    </a>
-                                )}
+
+                            {/* Right Column: All Content grouped together */}
+                            <div className="flex-1 flex flex-col min-w-0">
+                                <div className="flex items-center justify-between mb-3">
+                                    <h3 className="text-[rgb(var(--foreground))] font-bold text-xl leading-tight">
+                                        {project.title}
+                                    </h3>
+
+                                    {project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="mr-2 p-2.5 text-[rgb(var(--foreground))] bg-transparent hover:border-[rgb(var(--foreground))] rounded-2xl border border-zinc-200 dark:border-white/20 transition-all shadow-sm group/git"
+                                            aria-label="GitHub Repository"
+                                        >
+                                            <Github className="w-5 h-5 group-hover/git:scale-110 transition-transform" />
+                                        </a>
+                                    )}
+                                </div>
+
+                                <p className="text-[rgb(var(--muted-foreground))] mb-6 text-base leading-relaxed max-w-2xl">
+                                    {project.description}
+                                </p>
+
+                                <div className="mt-auto flex flex-wrap gap-2">
+                                    {project.tags.map((tag, tagIndex) => (
+                                        <span
+                                            key={tagIndex}
+                                            className="px-3 py-1.5 text-[11px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700 shadow-sm transition-colors"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-
-                        <h3 className="text-[rgb(var(--foreground))] font-bold text-xl mb-2 leading-tight pl-10">
-                            {project.title}
-                        </h3>
-
-                        <p className="text-sm text-[rgb(var(--muted-foreground))] mb-4 line-clamp-2 pl-10">
-                            {project.description}
-                        </p>
-
-                        <div className="mt-auto flex flex-wrap gap-2">
-                            {project.tags.map((tag, tagIndex) => (
-                                <span
-                                    key={tagIndex}
-                                    className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-lg bg-[rgb(var(--card))] text-[rgb(var(--foreground))] border border-[rgb(var(--border))]"
-                                >
-                                    {tag}
-                                </span>
-                            ))}
                         </div>
                     </div>
                 ))}

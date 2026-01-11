@@ -58,8 +58,8 @@
 
   --muted: 39 39 42;
   /* zinc-800 */
-  --muted-foreground: 161 161 170;
-  /* zinc-400 */
+  --muted-foreground: 180 180 190;
+  /* brighter zinc-400/300 mix */
 
   --accent: 39 39 42;
   --accent-foreground: 250 250 250;
@@ -86,9 +86,9 @@ body {
 
   /* Grid Pattern Background - Classy Line Look */
   background-image:
-    linear-gradient(to right, rgba(128, 128, 128, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(128, 128, 128, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(to right, rgba(128, 128, 128, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 128, 128, 0.15) 1px, transparent 1px);
+  background-size: 30px 30px;
   background-position: center top;
 }
 
@@ -140,6 +140,20 @@ p {
   color: rgb(var(--muted-foreground));
 }
 
+.glass {
+  background: rgba(var(--card), 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(var(--border), 0.5);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Button Styles */
 .btn-zinc {
   display: inline-flex;
@@ -158,6 +172,88 @@ p {
 .btn-zinc:hover {
   background: rgb(var(--accent));
   transform: translateY(-1px);
+}
+
+/* Resume Button specific styles */
+.btn-resume {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgb(var(--primary));
+  color: rgb(var(--primary-foreground));
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  z-index: 10;
+  width: auto;
+  min-width: 160px;
+}
+
+.btn-resume:hover {
+  background: rgb(var(--primary));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn-resume .icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-resume::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to bottom right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+[data-theme="dark"] .btn-resume::after {
+  background: linear-gradient(to bottom right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%);
+}
+
+@media (max-width: 640px) {
+  .btn-resume {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.75rem;
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-150%) translateY(-150%) rotate(45deg);
+  }
+
+  20% {
+    transform: translateX(150%) translateY(150%) rotate(45deg);
+  }
+
+  100% {
+    transform: translateX(150%) translateY(150%) rotate(45deg);
+  }
 }
 
 /* Icons */
@@ -220,4 +316,86 @@ p {
     min-width: 0 !important;
     /* Fix flex overflow */
   }
+}
+
+/* Hire Me Badge - Premium Sticker Look */
+.badge-hire-me {
+  position: absolute;
+  top: -0.25rem;
+  left: -1rem;
+  z-index: 20;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  color: white;
+  padding: 0.4rem 1.1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.badge-hire-me:hover {
+  box-shadow: 0 15px 35px -5px rgba(99, 102, 241, 0.6);
+}
+
+.badge-hire-me::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
+  transform: skewX(-20deg);
+  animation: badge-shine 3s infinite;
+}
+
+@keyframes badge-shine {
+  0% {
+    left: -100%;
+  }
+
+  20%,
+  100% {
+    left: 100%;
+  }
+}
+
+/* Profile Image - Architectural Double Ring Style */
+.profile-border-premium {
+  position: relative;
+  padding: 5px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), rgba(168, 85, 247, 0.5), rgba(236, 72, 153, 0.5));
+  border-radius: 9999px;
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-border-premium::after {
+  content: "";
+  position: absolute;
+  inset: 1.5px;
+  background: rgb(var(--background));
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.profile-image-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+  border: 2px solid rgb(var(--border));
+  background: rgb(var(--card));
 }

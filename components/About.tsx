@@ -7,7 +7,7 @@ export default function About() {
     const highlights = [
         {
             icon: <Clock className="icon" />,
-            text: "4 years experience",
+            text: "3 years experience",
             sub: "Cloud Engineering"
         },
         {
@@ -23,9 +23,12 @@ export default function About() {
     ];
 
     return (
-        <section id="about" className="flex flex-col gap-6 mt-8 ">
-            <div className="bento-card">
-                <h2 className="text-[rgb(var(--foreground))]">About Me</h2>
+        <section id="about" className="flex flex-col gap-6 scroll-mt-32">
+            <div className="bento-card rounded-[3rem]! bg-gradient-to-br from-white/60 to-white/30 dark:from-zinc-900/60 dark:to-zinc-900/30 backdrop-blur-md border-white/20 shadow-xl shadow-black/5">
+                <h2 className="text-[rgb(var(--foreground))] flex items-center gap-2">
+                    <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+                    About Me
+                </h2>
                 <p className="text-lg leading-relaxed text-[rgb(var(--foreground))]">
                     As a <strong className="font-semibold text-[rgb(var(--foreground))]">Senior Cloud Engineer</strong> with
                     a deep focus on <strong className="font-semibold text-[rgb(var(--foreground))]">Google Cloud Platform</strong>,
@@ -41,10 +44,10 @@ export default function About() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {highlights.map((item, index) => (
-                    <div key={index} className="bento-card flex flex-col items-center text-center gap-3 p-6">
-                        <div className="p-3 bg-[rgb(var(--secondary))] rounded-full text-[rgb(var(--foreground))]">
+                    <div key={index} className="bento-card !rounded-[2rem] flex flex-col items-center text-center gap-3 p-6 group hover:scale-[1.02] transition-all duration-300">
+                        <div className="p-3 bg-[rgb(var(--secondary))] rounded-2xl text-[rgb(var(--foreground))] group-hover:rotate-6 transition-transform">
                             {item.icon}
                         </div>
                         <div>

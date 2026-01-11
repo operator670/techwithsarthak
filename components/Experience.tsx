@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Calendar, ArrowUpRight } from 'lucide-react';
+import { MapPin, Calendar, ArrowUpRight, Star } from 'lucide-react';
 
 interface Job {
     title: string;
@@ -40,8 +40,11 @@ export default function Experience() {
     ];
 
     return (
-        <section id="experience" className="bento-card">
-            <h2 className="text-[rgb(var(--foreground))]">Experience</h2>
+        <section id="experience" className="bento-card rounded-[3rem]!">
+            <h2 className="text-[rgb(var(--foreground))] flex items-center gap-2 mb-8">
+                <Star className="w-5 h-5 text-blue-500 fill-blue-500" />
+                Work Experience
+            </h2>
             <div className="relative border-l border-[rgb(var(--border))] ml-3 space-y-8">
                 {jobs.map((job, index) => (
                     <div key={index} className="pl-8 relative group" style={{ paddingLeft: '2rem' }}>

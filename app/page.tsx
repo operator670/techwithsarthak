@@ -8,7 +8,7 @@ const PortfolioContent = dynamic(() => import("@/components/PortfolioContent"), 
 
 export default function Home() {
   return (
-    <main>
+    <main className="pt-12">
       <PortfolioContent />
     </main>
   );
