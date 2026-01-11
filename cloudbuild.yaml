@@ -44,4 +44,5 @@ timeout: '1800s'
 
 # Optional: Add options
 options:
+  logging: CLOUD_LOGGING_ONLY
   machineType: 'N1_HIGHCPU_8'
