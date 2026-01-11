@@ -21,14 +21,6 @@ steps:
       - 'gcr.io/$PROJECT_ID/portfolio:latest'
 
   # Step 3: Deploy to Cloud Run
-  - name: 'gcr.io/cloud-builders/gke-deploy'
-    args:
-      - run
-      - --filename=.
-      - --image=gcr.io/$PROJECT_ID/portfolio:$SHORT_SHA
-      - --location=asia-south1
-
-  # Alternative: Use gcloud for Cloud Run deployment (simpler)
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       - 'run'
