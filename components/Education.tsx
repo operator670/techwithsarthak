@@ -36,11 +36,17 @@ export default function Education() {
                     </h2>
                     <h3 className="font-bold text-[rgb(var(--foreground))] text-lg">Bachelor of Engineering</h3>
                     <p className="text-[rgb(var(--muted-foreground))] text-sm sm:text-base">Information Science • Nitte Meenakshi Institute of Technology</p>
-                    <div className="flex items-center gap-2 mt-2">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800/80 px-2 py-0.5 rounded-md border border-zinc-200 dark:border-zinc-700 w-fit">
+                    <div className="flex items-center gap-3 mt-4">
+                        <span
+                            className="inline-flex items-center justify-center h-7 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 border border-zinc-200 dark:border-white/10 shadow-sm"
+                            style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem' }}
+                        >
                             2019 - 2023
                         </span>
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800/80 px-2 py-0.5 rounded-md border border-zinc-200 dark:border-zinc-700 w-fit">
+                        <span
+                            className="inline-flex items-center justify-center h-7 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 border border-zinc-200 dark:border-white/10 shadow-sm"
+                            style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem' }}
+                        >
                             8.3 CGPA
                         </span>
                     </div>
@@ -63,9 +69,12 @@ export default function Education() {
                                     {cert.icon}
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col gap-2">
                                 <p className="font-bold text-[rgb(var(--foreground))] leading-tight group-hover:text-indigo-500 transition-colors">{cert.name}</p>
-                                <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800/80 px-2 py-0.5 rounded-md border border-zinc-200 dark:border-zinc-700 w-fit">
+                                <span
+                                    className="inline-flex items-center justify-center h-7 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 border border-zinc-200 dark:border-white/10 shadow-sm w-fit"
+                                    style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem' }}
+                                >
                                     {cert.year}
                                 </span>
                             </div>

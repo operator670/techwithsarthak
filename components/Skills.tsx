@@ -32,7 +32,7 @@ export default function Skills() {
         {
             name: "Networking",
             icon: <Activity className="icon" />,
-            skills: ["VPC", "Cloud Interconnect", "Network Connectivity Center", "Cloud NAT", "Load Balancing"],
+            skills: ["VPC", "Cloud VPN", "Network Connectivity Center", "Cloud NAT", "Load Balancing"],
             color: "text-[#34A853]" // Google Green
         },
         {
@@ -44,7 +44,7 @@ export default function Skills() {
         {
             name: "IaC & Automation",
             icon: <FileCode className="icon" />,
-            skills: ["Terraform", "Ansible", "Python", "Bash"],
+            skills: ["Terraform", "Python", "Bash"],
             color: "text-[#8B5CF6]" // Purple
         },
         {

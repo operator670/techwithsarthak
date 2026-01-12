@@ -34,14 +34,17 @@ export default function Achievements() {
             </h2>
             <div className="space-y-4">
                 {achievements.map((item, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 hover:bg-[rgb(var(--secondary))] rounded-xl transition-colors">
+                    <div key={index} className="flex items-center justify-between p-3 hover:bg-[rgb(var(--secondary))] rounded-xl transition-colors group">
                         <div className="flex items-center gap-4">
-                            <div className="p-2 bg-[rgb(var(--secondary))] rounded-full border border-[rgb(var(--border))]">
+                            <div className="p-2 bg-[rgb(var(--secondary))] rounded-full border border-[rgb(var(--border))] group-hover:border-indigo-400/50 transition-colors">
                                 {item.icon}
                             </div>
-                            <span className="font-medium text-[rgb(var(--foreground))]">{item.title}</span>
+                            <span className="font-medium text-[rgb(var(--foreground))] text-sm sm:text-base">{item.title}</span>
                         </div>
-                        <span className="text-sm font-semibold px-2 py-1 rounded bg-[rgb(var(--secondary))] text-[rgb(var(--muted-foreground))] border border-[rgb(var(--border))]">
+                        <span
+                            className="inline-flex items-center justify-center h-7 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 border border-zinc-200 dark:border-white/10 shadow-sm transition-all"
+                            style={{ paddingLeft: '1.25rem', paddingRight: '1.25rem' }}
+                        >
                             {item.year}
                         </span>
                     </div>

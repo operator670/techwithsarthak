@@ -84,17 +84,17 @@ export default function Sidebar() {
                     </a>
                 </div>
 
-                <div className="flex gap-3" style={{ marginTop: '1.25rem' }}>
+                <div className="grid grid-cols-2 gap-3 w-full" style={{ marginTop: '1.25rem' }}>
                     <ThemeToggle />
                     <a
                         href="mailto:official.sarthak905@gmail.com"
                         className="btn-zinc group/email"
                         aria-label="Email Me"
                     >
-                        <div className="p-1.5 rounded bg-red-100 dark:bg-red-900/30 group-hover/email:bg-red-200 transition-colors">
+                        <div className="p-1 rounded bg-red-100 dark:bg-red-900/30 group-hover/email:bg-red-200 transition-colors">
                             <Mail className="icon text-[#EA4335]" />
                         </div>
-                        <span>Email Me</span>
+                        <span className="text-xs sm:text-sm font-semibold">Email Me</span>
                     </a>
                 </div>
             </div>
