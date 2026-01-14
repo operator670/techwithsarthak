@@ -1,0 +1,17 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://techwithsarthak.com/sitemap.xml
+
+# Disallow search engine crawlers from following certain paths
+Disallow: /_next/
+Disallow: /api/
+
+# Allow specific crawlers to index everything
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
