@@ -29,17 +29,17 @@ export default function ThemeToggle() {
         >
             {theme === 'light' ? (
                 <>
-                    <div className="p-1 rounded bg-amber-100 dark:bg-amber-900/30 group-hover/theme:bg-amber-200 transition-colors">
-                        <Sun className="icon text-[#F59E0B]" />
-                    </div>
-                    <span className="text-xs sm:text-sm font-semibold">Light</span>
-                </>
-            ) : (
-                <>
                     <div className="p-1 rounded bg-indigo-100 dark:bg-indigo-900/30 group-hover/theme:bg-indigo-200 transition-colors">
                         <Moon className="icon text-[#818CF8]" />
                     </div>
                     <span className="text-xs sm:text-sm font-semibold">Dark</span>
+                </>
+            ) : (
+                <>
+                    <div className="p-1 rounded bg-amber-100 dark:bg-amber-900/30 group-hover/theme:bg-amber-200 transition-colors">
+                        <Sun className="icon text-[#F59E0B]" />
+                    </div>
+                    <span className="text-xs sm:text-sm font-semibold">Light</span>
                 </>
             )}
         </button>
