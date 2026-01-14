@@ -3,9 +3,30 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Sarthak Kesarwani - Senior Cloud Engineer | GCP, AWS, Terraform",
-  description: "Senior Cloud Engineer with 3+ years of experience in GCP, AWS, Terraform, and Generative AI. Specialized in cloud migrations, platform engineering, AI solutions, and agentic systems.",
-  keywords: ["Cloud Engineer", "Google Cloud", "AWS", "Terraform", "Generative AI", "Vertex AI", "Cloud Architecture", "FastAPI", "NextJS", "Cloud Run", "Agentic AI", "ADK"],
+  title: "Sarthak Kesarwani - Senior Cloud Engineer Portfolio | Hire Me | Portfolio Design",
+  description: "Portfolio of Sarthak Kesarwani, Senior Cloud Engineer with 3+ years of experience in GCP, AWS, Terraform, and Generative AI. View projects, skills, and experience. Perfect example of professional portfolio design for engineers and developers.",
+  keywords: [
+    "Sarthak Kesarwani",
+    "Cloud Engineer",
+    "Senior Cloud Engineer",
+    "Cloud Engineer hire",
+    "Cloud Engineer portfolio",
+    "GCP expert",
+    "GCP architect",
+    "AWS architect",
+    "AWS specialist",
+    "Terraform specialist",
+    "Cloud infrastructure",
+    "Cloud infrastructure engineer",
+    "Generative AI engineer",
+    "Solution Architect",
+    "Cloud Migration",
+    "Platform Engineering",
+    "Portfolio design",
+    "Developer portfolio",
+    "Portfolio example",
+    "Tech portfolio"
+  ],
   authors: [{ name: "Sarthak Kesarwani", url: "https://techwithsarthak.com" }],
   creator: "Sarthak Kesarwani",
   publisher: "Sarthak Kesarwani",
@@ -14,8 +35,8 @@ export const metadata: Metadata = {
     canonical: "https://techwithsarthak.com",
   },
   openGraph: {
-    title: "Sarthak Kesarwani - Senior Cloud Engineer",
-    description: "Senior Cloud Engineer with expertise in GCP, AWS, Terraform, and Generative AI",
+    title: "Sarthak Kesarwani - Senior Cloud Engineer Portfolio",
+    description: "Professional portfolio featuring cloud infrastructure projects, AI solutions, and portfolio design inspiration for engineers",
     type: "website",
     url: "https://techwithsarthak.com",
     siteName: "Sarthak Kesarwani Portfolio",
@@ -23,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sarthak Kesarwani - Senior Cloud Engineer",
-    description: "Senior Cloud Engineer with 3+ years of experience in cloud infrastructure and AI solutions",
+    title: "Sarthak Kesarwani - Cloud Engineer Portfolio",
+    description: "Senior Cloud Engineer | Portfolio Design | GCP | AWS | Terraform | Generative AI",
     creator: "@sarthak_dev",
   },
 };
