@@ -45,7 +45,7 @@ export default function Sidebar() {
                         <div className="profile-image-inner w-32 h-32">
                             <img
                                 src="/images/Sarthak.jpeg"
-                                alt="Sarthak Kesarwani"
+                                alt="Sarthak Kesarwani - Senior Cloud Engineer"
                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             />
                         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, ExternalLink, Code2, Cloud, Brain, Terminal, Star, Zap } from 'lucide-react';
+import { Github, ExternalLink, Code2, Cloud, Brain, Terminal, Star, Zap, Database } from 'lucide-react';
 
 interface Project {
     title: string;
@@ -18,6 +18,13 @@ export default function Projects() {
             description: "Agentic AI System for ED Tech industry powered by ADK (Agent Development Kit). Implements a microservices architecture with intelligent agents for personalized learning experiences, scalable data management, and seamless integration across educational platforms.",
             tags: ["ADK", "Next.js", "FastAPI", "Cloud SQL", "Microservices", "Cloud Run", "Secret Manager", "Cloud Build"],
             icon: <Zap className="w-5 h-5 text-yellow-500" />
+        },
+        {
+            title: "App Deployment on GKE with Cloud SQL Sidecar Proxy",
+            description: "Comprehensive guide on containerizing and deploying Flask applications to Google Kubernetes Engine with secure Cloud SQL connectivity using sidecar proxy pattern. Covers Docker containerization, private Cloud SQL instances, GKE cluster setup, and Kubernetes configurations including Deployments, Services, and ConfigMaps.",
+            tags: ["Flask", "GKE", "Cloud SQL", "Docker", "Kubernetes", "Sidecar Proxy", "Python"],
+            link: "https://medium.com/google-cloud/streamlining-flask-app-deployment-on-gke-with-cloud-sql-and-a-secure-sidecar-proxy-aecca4d67683",
+            icon: <Database className="w-5 h-5 text-emerald-500" />
         },
         {
             title: "Enterprise Google Cloud Landing Zone",
@@ -69,6 +76,17 @@ export default function Projects() {
                                             aria-label="GitHub Repository"
                                         >
                                             <Github className="w-5 h-5 group-hover/git:scale-110 transition-transform" />
+                                        </a>
+                                    )}
+                                    {project.link && (
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="mr-2 p-2 text-[rgb(var(--foreground))] bg-transparent hover:border-[rgb(var(--foreground))] rounded-2xl border border-zinc-200 dark:border-white/20 transition-all shadow-sm group/link"
+                                            aria-label="View Project"
+                                        >
+                                            <ExternalLink className="w-5 h-5 group-hover/link:scale-110 transition-transform" />
                                         </a>
                                     )}
                                 </div>
