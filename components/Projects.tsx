@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, ExternalLink, Code2, Cloud, Brain, Terminal, Star } from 'lucide-react';
+import { Github, ExternalLink, Code2, Cloud, Brain, Terminal, Star, Zap } from 'lucide-react';
 
 interface Project {
     title: string;
@@ -14,9 +14,15 @@ interface Project {
 export default function Projects() {
     const projects: Project[] = [
         {
+            title: "Project Calypso",
+            description: "Agentic AI System for ED Tech industry powered by ADK (Agent Development Kit). Implements a microservices architecture with intelligent agents for personalized learning experiences, scalable data management, and seamless integration across educational platforms.",
+            tags: ["ADK", "Next.js", "FastAPI", "Cloud SQL", "Microservices", "Cloud Run", "Secret Manager", "Cloud Build"],
+            icon: <Zap className="w-5 h-5 text-yellow-500" />
+        },
+        {
             title: "Enterprise Google Cloud Landing Zone",
             description: "Automated deployment of secure, scalable landing zones across GCP using Terraform.",
-            tags: ["Terraform", "GCP", "Infrastructure as Code", "Security"],
+            tags: ["Terraform", "GCP", "Infrastructure as Code", "Security", "GitHub Actions"],
             github: "https://github.com/operator670/google-cloud-terraform",
             icon: <Cloud className="w-5 h-5 text-blue-500" />
         }

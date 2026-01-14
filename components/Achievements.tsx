@@ -32,18 +32,18 @@ export default function Achievements() {
                 <Star className="w-5 h-5 text-orange-500 fill-orange-500" />
                 Key Achievements
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-8">
                 {achievements.map((item, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 hover:bg-[rgb(var(--secondary))] rounded-xl transition-colors group">
-                        <div className="flex items-center gap-4">
-                            <div className="p-2 bg-[rgb(var(--secondary))] rounded-full border border-[rgb(var(--border))] group-hover:border-indigo-400/50 transition-colors">
+                    <div key={index} className="flex items-center justify-between p-4 hover:bg-[rgb(var(--secondary))] rounded-xl transition-colors group">
+                        <div className="flex items-center gap-4 flex-1">
+                            <div className="p-2 bg-[rgb(var(--secondary))] rounded-full border border-[rgb(var(--border))] group-hover:border-indigo-400/50 transition-colors flex-shrink-0">
                                 {item.icon}
                             </div>
                             <span className="font-medium text-[rgb(var(--foreground))] text-sm sm:text-base">{item.title}</span>
                         </div>
                         <span
-                            className="inline-flex items-center justify-center h-7 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 border border-zinc-200 dark:border-white/10 shadow-sm transition-all"
-                            style={{ paddingLeft: '1.25rem', paddingRight: '1.25rem' }}
+                            className="inline-flex items-center justify-center h-10 text-[11px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 shadow-sm transition-all flex-shrink-0"
+                            style={{ paddingLeft: '2rem', paddingRight: '2rem', paddingTop: '0.75rem', paddingBottom: '0.75rem', margin: '0.25rem' }}
                         >
                             {item.year}
                         </span>

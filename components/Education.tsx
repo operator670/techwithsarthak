@@ -38,14 +38,14 @@ export default function Education() {
                     <p className="text-[rgb(var(--muted-foreground))] text-sm sm:text-base">Information Science • Nitte Meenakshi Institute of Technology</p>
                     <div className="flex items-center gap-3 mt-4">
                         <span
-                            className="inline-flex items-center justify-center h-7 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 border border-zinc-200 dark:border-white/10 shadow-sm"
-                            style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem' }}
-                        >
+                            className="inline-flex items-center justify-center h-7 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 shadow-sm"
+                            style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem', marginTop: '1rem' }}
+                        > 
                             2019 - 2023
                         </span>
                         <span
-                            className="inline-flex items-center justify-center h-7 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 border border-zinc-200 dark:border-white/10 shadow-sm"
-                            style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem' }}
+                            className="inline-flex items-center justify-center h-7 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 shadow-sm"
+                            style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem', marginTop: '1rem'  }}
                         >
                             8.3 CGPA
                         </span>
@@ -72,7 +72,7 @@ export default function Education() {
                             <div className="flex flex-col gap-2">
                                 <p className="font-bold text-[rgb(var(--foreground))] leading-tight group-hover:text-indigo-500 transition-colors">{cert.name}</p>
                                 <span
-                                    className="inline-flex items-center justify-center h-7 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 border border-zinc-200 dark:border-white/10 shadow-sm w-fit"
+                                    className="inline-flex items-center justify-center h-7 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 shadow-sm w-fit"
                                     style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem' }}
                                 >
                                     {cert.year}
