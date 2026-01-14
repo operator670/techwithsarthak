@@ -36,13 +36,13 @@ export default function Achievements() {
                 {achievements.map((item, index) => (
                     <div key={index} className="flex items-center justify-between p-4 hover:bg-[rgb(var(--secondary))] rounded-xl transition-colors group">
                         <div className="flex items-center gap-4 flex-1">
-                            <div className="p-2 bg-[rgb(var(--secondary))] rounded-full border border-[rgb(var(--border))] group-hover:border-indigo-400/50 transition-colors flex-shrink-0">
+                            <div className="p-2 bg-[rgb(var(--secondary))] rounded-full border border-[rgb(var(--border))] group-hover:border-indigo-400/50 transition-colors shrink-0">
                                 {item.icon}
                             </div>
                             <span className="font-medium text-[rgb(var(--foreground))] text-sm sm:text-base">{item.title}</span>
                         </div>
                         <span
-                            className="inline-flex items-center justify-center h-10 text-[11px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 shadow-sm transition-all flex-shrink-0"
+                            className="inline-flex items-center justify-center h-10 text-[11px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 shadow-sm transition-all shrink-0"
                             style={{ paddingLeft: '2rem', paddingRight: '2rem', paddingTop: '0.75rem', paddingBottom: '0.75rem', margin: '0.25rem' }}
                         >
                             {item.year}

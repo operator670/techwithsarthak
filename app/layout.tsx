@@ -48,6 +48,14 @@ export const metadata: Metadata = {
     description: "Senior Cloud Engineer | Portfolio Design | GCP | AWS | Terraform | Generative AI",
     creator: "@sarthak_dev",
   },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -60,6 +68,8 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
         <link rel="canonical" href="https://techwithsarthak.com" />
         <script
           type="application/ld+json"
