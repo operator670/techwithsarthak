@@ -12,7 +12,7 @@ import Achievements from './Achievements';
 export default function PortfolioContent() {
     return (
         <div className="container-custom" style={{ paddingTop: '2rem', paddingBottom: '3rem' }}>
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            <div className="flex flex-col lg:flex-row gap-8">
                 {/* Sticky Sidebar */}
                 <Sidebar />
 

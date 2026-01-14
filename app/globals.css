@@ -69,6 +69,13 @@
   --ring: 212 212 216;
 }
 
+html {
+  /* Fluid scaling: Tries to stay around 14px but adjusts slightly based on width.
+     Base is 13.5px + 0.1% of viewport width.
+     This ensures it feels "tight" on a 14-inch laptop but scales nicely on bigger screens. */
+  font-size: clamp(13px, 0.85rem + 0.1vw, 15px);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -95,10 +102,10 @@ body {
 /* Utility Classes */
 
 .container-custom {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 /* Bento Card Style */
@@ -106,8 +113,8 @@ body {
   background: rgb(var(--card));
   border: 1px solid rgb(var(--border));
   border-radius: 1.5rem;
-  /* rounded-3xl equivalent */
-  padding: 2rem;
+  /* Dynamic padding: 1.25rem on mobile, up to 1.75rem on large desktop */
+  padding: clamp(1.25rem, 2vw, 1.75rem);
   transition: all 0.2s ease-in-out;
 }
 
@@ -309,7 +316,8 @@ p {
   aside {
     position: sticky !important;
     top: 2rem !important;
-    width: 320px !important;
+    /* Responsive sidebar: comfortable for 14-inch laptops */
+    width: clamp(260px, 22vw, 300px) !important;
     flex-shrink: 0 !important;
   }
 
