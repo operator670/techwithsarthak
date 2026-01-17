@@ -48,7 +48,7 @@ export default function Projects() {
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="group relative flex flex-col p-8! rounded-[2.5rem] border border-[rgb(var(--border))] hover:border-indigo-500/30 bg-gradient-to-br from-zinc-50 to-white dark:from-zinc-900/50 dark:to-zinc-900/10 hover:shadow-2xl hover:shadow-black/5 transition-all duration-300"
+                        className="group relative flex flex-col p-8! rounded-[2.5rem] border border-[rgb(var(--border))] hover:border-indigo-500/30 bg-linear-to-br from-[rgb(var(--secondary))] to-white/5 dark:from-zinc-900/50 dark:to-zinc-900/10 hover:shadow-2xl hover:shadow-black/5 transition-all duration-300"
                     >
                         <div className="flex gap-6">
                             {/* Left Column: Technology Icon */}
@@ -101,7 +101,7 @@ export default function Projects() {
                                     {project.tags.map((tag, tagIndex) => (
                                         <span
                                             key={tagIndex}
-                                            className="inline-flex items-center justify-center h-8 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-200 dark:bg-white/5 text-zinc-800 dark:text-zinc-300 border border-zinc-300 dark:border-white/10 shadow-sm hover:border-indigo-500/50 transition-all"
+                                            className="inline-flex items-center justify-center h-8 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-100 dark:bg-white/5 text-zinc-600 dark:text-zinc-300 border border-zinc-200 dark:border-white/10 shadow-sm hover:border-indigo-500/50 transition-all"
                                             style={{ paddingLeft: '1rem', paddingRight: '1rem' }}
                                         >
                                             {tag}

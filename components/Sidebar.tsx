@@ -55,7 +55,7 @@ export default function Sidebar() {
                         ${showBadge || 'group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 group-hover:rotate-[-5deg] group-hover:pointer-events-auto'}
                         ${showBadge ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-50 translate-y-4'}
                     `}>
-                        <Sparkles className="w-3 h-3 fill-white" />
+                        <Sparkles className="w-3.5 h-3.5 fill-white" />
                         HIRE ME!
                     </div>
                 </div>
