@@ -3,59 +3,91 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Sarthak Kesarwani - Senior Cloud Engineer Portfolio | Hire Me | Portfolio Design",
-  description: "Portfolio of Sarthak Kesarwani, Senior Cloud Engineer with 3+ years of experience in GCP, AWS, Terraform, and Generative AI. View projects, skills, and experience. Perfect example of professional portfolio design for engineers and developers.",
+  metadataBase: new URL('https://techwithsarthak.com'),
+  title: {
+    default: "Sarthak Kesarwani - Senior Cloud Engineer | GCP & AWS Expert",
+    template: "%s | Sarthak Kesarwani"
+  },
+  description: "Sarthak Kesarwani is a Senior Cloud Engineer specializing in Google Cloud Platform (GCP), AWS, Terraform, and Generative AI. With 3+ years of experience in cloud infrastructure, microservices, and platform engineering. Based in New Delhi, India. Available for hire.",
   keywords: [
     "Sarthak Kesarwani",
-    "Cloud Engineer",
+    "Sarthak Kesarwani Cloud Engineer",
+    "Sarthak Kesarwani GCP",
+    "Sarthak Kesarwani portfolio",
     "Senior Cloud Engineer",
-    "Cloud Engineer hire",
-    "Cloud Engineer portfolio",
-    "GCP expert",
-    "GCP architect",
-    "AWS architect",
-    "AWS specialist",
+    "Cloud Engineer India",
+    "Cloud Engineer Delhi",
+    "GCP expert India",
+    "Google Cloud Platform engineer",
+    "AWS Solutions Architect",
     "Terraform specialist",
-    "Cloud infrastructure",
     "Cloud infrastructure engineer",
     "Generative AI engineer",
-    "Solution Architect",
-    "Cloud Migration",
+    "Agentic AI developer",
+    "Kubernetes expert",
+    "DevOps engineer",
     "Platform Engineering",
-    "Portfolio design",
-    "Developer portfolio",
-    "Portfolio example",
-    "Tech portfolio"
+    "Cloud Migration specialist",
+    "Microservices architect",
+    "Tech portfolio",
+    "Hire cloud engineer"
   ],
   authors: [{ name: "Sarthak Kesarwani", url: "https://techwithsarthak.com" }],
   creator: "Sarthak Kesarwani",
   publisher: "Sarthak Kesarwani",
-  robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: "https://techwithsarthak.com",
   },
   openGraph: {
-    title: "Sarthak Kesarwani - Senior Cloud Engineer Portfolio",
-    description: "Professional portfolio featuring cloud infrastructure projects, AI solutions, and portfolio design inspiration for engineers",
-    type: "website",
+    type: "profile",
     url: "https://techwithsarthak.com",
-    siteName: "Sarthak Kesarwani Portfolio",
+    title: "Sarthak Kesarwani - Senior Cloud Engineer | GCP & AWS Expert",
+    description: "Senior Cloud Engineer with 3+ years of experience in GCP, AWS, Terraform, Kubernetes, and Generative AI. Specializing in cloud infrastructure, microservices, and platform engineering. Based in New Delhi, India.",
+    siteName: "Sarthak Kesarwani - Cloud Engineer Portfolio",
     locale: "en_US",
+    images: [
+      {
+        url: "/images/Sarthak.jpeg",
+        width: 800,
+        height: 800,
+        alt: "Sarthak Kesarwani - Senior Cloud Engineer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sarthak Kesarwani - Cloud Engineer Portfolio",
-    description: "Senior Cloud Engineer | Portfolio Design | GCP | AWS | Terraform | Generative AI",
-    creator: "@sarthak_dev",
+    site: "@acloudtomato",
+    creator: "@acloudtomato",
+    title: "Sarthak Kesarwani - Senior Cloud Engineer",
+    description: "Senior Cloud Engineer | GCP Expert | AWS Solutions Architect | Terraform | Kubernetes | Generative AI | Available for Hire",
+    images: ["/images/Sarthak.jpeg"],
   },
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon/favicon.ico", sizes: "any" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
     ],
     apple: [
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
+  manifest: "/favicon/site.webmanifest",
+  verification: {
+    google: "google-site-verification-code-here", // Add your Google Search Console verification code
+  },
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -68,8 +100,6 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/icon.svg" />
         <link rel="canonical" href="https://techwithsarthak.com" />
         <script
           type="application/ld+json"
