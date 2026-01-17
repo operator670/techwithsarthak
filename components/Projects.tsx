@@ -48,7 +48,7 @@ export default function Projects() {
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="group relative flex flex-col p-8! rounded-[2.5rem] border border-[rgb(var(--border))] hover:border-indigo-500/30 bg-gradient-to-br from-zinc-50 to-white dark:from-zinc-900/50 dark:to-zinc-900/10 hover:shadow-2xl hover:shadow-black/5 transition-all duration-300"
+                        className="group relative flex flex-col p-8! rounded-[2.5rem] border-2 border-zinc-300 dark:border-[rgb(var(--border))] hover:border-indigo-500/50 bg-linear-to-br from-zinc-100 to-zinc-50 dark:from-zinc-900/50 dark:to-zinc-900/10 hover:shadow-2xl hover:shadow-black/10 transition-all duration-300"
                     >
                         <div className="flex gap-6">
                             {/* Left Column: Technology Icon */}
@@ -63,7 +63,7 @@ export default function Projects() {
                             {/* Right Column: All Content grouped together */}
                             <div className="flex-1 flex flex-col min-w-0">
                                 <div className="flex items-center justify-between mb-3">
-                                    <h3 className="text-[rgb(var(--foreground))] font-bold text-xl leading-tight">
+                                    <h3 className="text-zinc-900 dark:text-white font-bold text-xl leading-tight">
                                         {project.title}
                                     </h3>
 
@@ -72,7 +72,7 @@ export default function Projects() {
                                             href={project.github}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="mr-2 p-2 text-[rgb(var(--foreground))] bg-transparent hover:border-[rgb(var(--foreground))] rounded-2xl border border-zinc-200 dark:border-white/20 transition-all shadow-sm group/git"
+                                            className="mr-2 p-2 text-zinc-900 dark:text-white bg-transparent hover:border-zinc-900 dark:hover:border-white rounded-2xl border border-zinc-300 dark:border-white/20 transition-all shadow-sm group/git"
                                             aria-label="GitHub Repository"
                                         >
                                             <Github className="w-5 h-5 group-hover/git:scale-110 transition-transform" />
@@ -83,7 +83,7 @@ export default function Projects() {
                                             href={project.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="mr-2 p-2 text-[rgb(var(--foreground))] bg-transparent hover:border-[rgb(var(--foreground))] rounded-2xl border border-zinc-200 dark:border-white/20 transition-all shadow-sm group/link"
+                                            className="mr-2 p-2 text-zinc-900 dark:text-white bg-transparent hover:border-zinc-900 dark:hover:border-white rounded-2xl border border-zinc-300 dark:border-white/20 transition-all shadow-sm group/link"
                                             aria-label="View Project"
                                         >
                                             <ExternalLink className="w-5 h-5 group-hover/link:scale-110 transition-transform" />
@@ -91,7 +91,7 @@ export default function Projects() {
                                     )}
                                 </div>
 
-                                <p className="text-[rgb(var(--muted-foreground))] text-sm sm:text-base leading-relaxed max-w-2xl">
+                                <p className="text-zinc-700 dark:text-zinc-300 text-sm sm:text-base leading-relaxed max-w-2xl">
                                     {project.description}
                                 </p>
 
@@ -101,7 +101,7 @@ export default function Projects() {
                                     {project.tags.map((tag, tagIndex) => (
                                         <span
                                             key={tagIndex}
-                                            className="inline-flex items-center justify-center h-8 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-200 dark:bg-white/5 text-zinc-800 dark:text-zinc-300 border border-zinc-300 dark:border-white/10 shadow-sm hover:border-indigo-500/50 transition-all"
+                                            className="inline-flex items-center justify-center h-8 text-[10px] font-bold uppercase tracking-widest rounded-xl bg-zinc-300 dark:bg-white/5 text-zinc-900 dark:text-zinc-300 border border-zinc-400 dark:border-white/10 shadow-sm hover:border-indigo-500/50 transition-all"
                                             style={{ paddingLeft: '1rem', paddingRight: '1rem' }}
                                         >
                                             {tag}
